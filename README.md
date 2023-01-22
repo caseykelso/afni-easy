@@ -9,12 +9,7 @@ sudo apt update -y && sudo apt dist-upgrade -y && sudo apt install git build-ess
 
 2. Install Docker
 ```bash
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
     
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
@@ -39,6 +34,4 @@ git clone https://github.com/caseykelso/afni-easy.git
 ```bash
 ./run.sh
 ```
-
-
 
