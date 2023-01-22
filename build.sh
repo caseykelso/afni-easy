@@ -1,2 +1,2 @@
-docker build -t afni-easy .
+docker build -t afni-base .
 

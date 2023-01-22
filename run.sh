@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 SOURCE=$(pwd)/dev
-CONTAINER_HOME=/home/afni
-CONTAINER=afni-easy
-REPOSITORY=afni-easy
+CONTAINER_HOME=/home/build
+CONTAINER=afni-base
+REPOSITORY=afni-base
 TAG=0.01
 FORCE_BUILD=0
 PRIVILEGED=
 ENVIRONMENT=
-	docker run $PRIVILEGED  -v $SOURCE:$CONTAINER_HOME/dev:delegated  -v  ~/.ssh:/home/afni/.ssh:ro -v ~/.gitconfig:/home/afni/.gitconfig:ro  -it  $REPOSITORY
-
-
+	xhost +local:docker && docker run $PRIVILEGED --net=host  -e DISPLAY=$DISPLAY -v /root/.Xauthority:/root/.Xauthority:rw -v /tmp/.X11-unix:/tmp/.X11-unix  -v $SOURCE:$CONTAINER_HOME/dev:delegated  -v  ~/.ssh:/home/build/.ssh:ro -v ~/.gitconfig:/home/build/.gitconfig:ro  -it  $REPOSITORY
