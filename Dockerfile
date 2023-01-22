@@ -32,7 +32,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libgsl.so.23 /usr/lib/x86_64-linux-gnu/libgs
 RUN cd && curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries && \
           tcsh @update.afni.binaries -package linux_ubuntu_16_64 -do_extras
 
-ENV HOME="/root"
+ENV HOME="/home/afni"
 ENV PATH="${PATH}:${HOME}/abin"
 RUN cp $HOME/abin/AFNI.afnirc $HOME/.afnirc && suma -update_env
 RUN apsearch -update_all_afni_help
@@ -54,6 +54,4 @@ RUN export R_LIBS=$HOME/R && \
     curl -O https://afni.nimh.nih.gov/pub/dist/src/scripts_src/@add_rcran_ubuntu_18.04.tcsh
 RUN tcsh @add_rcran_ubuntu_18.04.tcsh
 RUN rPkgsInstall -pkgs ALL
-
-    
 
