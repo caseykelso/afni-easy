@@ -21,6 +21,7 @@ RUN apt-get install -y tcsh xfonts-base python-qt4        \
                         libssl-dev libgfortran3           \
                         gnome-terminal nautilus           \
                         gnome-icon-theme-symbolic         \
+			python3-pyqt4                     \
                         firefox xfonts-100dpi git         \
                         python-pip cmake                && \
                         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
